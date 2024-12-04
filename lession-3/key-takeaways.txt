@@ -1,0 +1,109 @@
+----------Xem lịch sử commit-----------
+git log
+
+----------Thay đổi commit masage-----------
+git commit --amend 
+ Gõ i -> để vào chế độ insert
+ Gõ Esc để thoát insert 
+ Gõ ":wq" -> write and quit
+* git commit --amend -m"masage"
+
+
+----------Đưa file từ vùng staging về working directory -----------
+git restore --staged <file>
+
+----------Đưa từ vùng repository về working directory(uncommit) -----------
+
+git reset HEAD~ <số lượng> 
+*<số lượng > : số lượng tính lần lượt từ commit gần nhất 
+
+---------- .gitignore -----------
+
+Tạo ra 1 file chứa dữ liệu file hoặc folder không cần git theo dõi
+*ghi trực tiếp tên file
+*hoặc ghi tên folder + /
+
+----------Javascript-----------
+
+1. Console log có thể in 1 chuỗi với nhiều cách
+   a. "Chuỗi" + tên biến
+   b. "Chuỗi" +"chuỗi"
+   c. `"Chuỗi ${tên biến} Chuỗi"`
+
+2. Object
+    2.1. Ví Dụ
+
+    let/const <object> ={
+        <thuoc_tinh>: <gia tri>
+    }
+
+    Ví dụ:
+    let car = {
+        color : "black",
+        brake : true,
+        seat {
+            seatNumber: 4,
+            seatColor: "white"
+        }
+        "year" : 2024
+    }
+
+    2.2. sử dụng
+    console.log("color = " + car.color)
+    console.log("seatNumber = "+ car.seat.seatNumber)
+    console.log("year = " + car["year"])
+
+* Có thể gán lại các giá trị trong object 
+* Trường hợp khai báo object là const thì không thể khai báo lại object đó thành object khác nhưng có thể khai báo lại giá trị trong object đ
+
+3. Toán tử (logical operator)
+&&: và
+||: hoặc
+!: phủ định, đảo ngược lại giá trị của mệnh đề (boolen)
+
+4. Mảng 
+ Mảng có thể chứa string, number, object, boolen,
+
+    4.1 Cách khai báo Mảng
+
+    let array = ["a",1,{},true]
+
+    4.2 Truy suất mảng 
+    Độ dài mảng
+    Lấy theo inddex [0],[1],[2]
+
+    Ví dụ  
+    console.log(array.length)
+    console.log(array[0])
+
+5. Function
+
+function là hàm, là 1 đoạn code được đặt tên và có thể tái sử dụng 
+
+    5.1 Khai báo function
+    function <nameFunction>(){
+        Code
+    }
+
+    5.2 Ví Dụ
+    Ví dụ 1: gọi function
+    
+    function count(){
+        for(let i = 0; i <= 100; i++){
+            console.log(i)
+        }
+    }
+    count();
+
+    Ví dụ 2: return value, parameter
+
+    function compare(a,b){
+        if(a>b){
+            return a
+        }
+        else return b
+    }
+    const big = compare(2,3);
+    console.log(big)
+  
+
