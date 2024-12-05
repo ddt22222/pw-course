@@ -9,6 +9,8 @@
 // ○ BMI < 30: Thừa cân
 // ○ BMI >= 30: Béo phì
 
+const { DESTRUCTION } = require("dns");
+
 const height = 1.75;
 const weight = 90;
 
@@ -105,3 +107,99 @@ isPrime();
 // // Sử dụng vòng for, duyệt trong mảng, nếu gặp phần tử nào có tên
 // trùng với tham số name, cập nhật giá trị email về newEmail
 
+
+let userInfo =  [
+{
+    name: "Duc",
+    email: "Duc@gmail.com"
+},
+{
+    name: "Nga",
+    email: "nga@gmail.com"
+},
+{
+    name: "Trong",
+    email: "Trong@gmail.com"
+},
+{
+    name: "Viet",
+    email: "Viet@gmail.com"
+}
+]
+
+function replaceEmail(name,newEmail){
+    for (let i in userInfo){
+        if(name === userInfo[i].name){
+            userInfo[i].email= newEmail;
+        }
+    }
+}
+
+replaceEmail("Viet", "Viet2@gmail.com");
+console.log(userInfo);
+
+// 6. Viết một hàm tính điểm trung bình của các sinh viên dựa trên điểm số lưu trong một
+// mảng các object.
+// Biết object có cấu trúc như sau: {“name”: “Alex”, score: 85}
+
+let studentScore = [
+{
+    "name" : "alex",
+    score : 85
+},
+{
+    "name": "david",
+    score : 79
+},
+{
+    "name": "tom",
+    score : 92
+},
+{
+    "name": "My",
+    score : 27  
+},
+{
+    "name": "thomas",
+    score : 54
+},
+]
+
+function scoreAvg(){
+    sumScore = 0;
+    for(let i in studentScore){
+        sumScore += studentScore[i].score;
+    }
+    return sumScore/studentScore.length;
+}
+const scoreA = scoreAvg();
+console.log(scoreA);
+
+// 7. Viết một hàm để kiểm tra xem tất cả sản phẩm trong một mảng có giá lớn hơn 0 không.
+// Biết giỏ hàng là một mảng chứa các object sản phẩm. Sản phẩm có cấu trúc: {“name”:
+// “product 1”, price: 100 }
+
+let productCart = [
+ { name: "product 1", price: -100},
+ { name: "product 2", price: 200},
+ { name: "product 3", price: 300},
+ { name: "product 4", price: 400},
+ { name: "product 5", price: 500}
+]
+
+function checkPrice(){
+    for (let i in productCart){
+        if(productCart[i].price < 0){
+            return console.log("Có sản phẩm giá nhỏ hơn 0");
+        }
+    }
+    console.log("Tất cả sản phẩm có giá đều lớn hơn 0");
+}
+checkPrice();
+
+// 8. Viết hàm có một tham số là giờ, in ra cửa hàng còn mở cửa hay không. Biết cửa hàng
+// mở cửa từ 9 giờ sáng đến 9 giờ tối.
+
+function checkOpen(now) {
+
+}
