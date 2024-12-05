@@ -200,6 +200,13 @@ checkPrice();
 // 8. Viết hàm có một tham số là giờ, in ra cửa hàng còn mở cửa hay không. Biết cửa hàng
 // mở cửa từ 9 giờ sáng đến 9 giờ tối.
 
-function checkOpen(now) {
+const AM = 9
+const PM = 21
 
+function checkOpen(now) {
+    if(now >= AM && now < PM){
+        console.log("Cửa hàng vẫn còn mở ")
+    }
+    else console.log("Cửa hàng đang đóng ")
 }
+checkOpen(20);
