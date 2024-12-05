@@ -210,3 +210,100 @@ function checkOpen(now) {
     else console.log("Cửa hàng đang đóng ")
 }
 checkOpen(20);
+
+// 9. Viết hàm có tham số là tuổi, in ra mức giá vé vào cổng tùy theo độ tuổi: trẻ em dưới 5
+// tuổi miễn phí, người lớn từ 18 tuổi trở lên là 100k, và trẻ em từ 6 đến 17 tuổi là 50k.
+
+function ticketInfo(age){
+    if(age <= 5 ){
+        console.log("Miễn phí")
+        return;
+    }
+    if(age >= 18){
+        console.log("Giá vé là 100k")
+        return;
+    } 
+    if(age >= 6 && age < 18){
+        console.log("Giá vé là 50k")
+        return;
+    }
+}
+ticketInfo(19);
+
+// 10. Viết hàm in ra tên tháng dựa vào số tháng được nhập vào. Sử dụng câu lệnh
+// switch...case để xử lý.
+
+function toMonth(month){
+    switch(month){
+        case month = 1:
+            console.log("January");
+            break;
+        case month = 2:
+            console.log("Feburary");
+            break;    
+        case month = 3:
+            console.log("March");
+            break;    
+        case month = 4:
+            console.log("April");
+            break;
+        case month = 5:
+            console.log("May");
+            break;    
+        case month = 6:
+            console.log("June");
+            break;    
+        case month = 7:
+            console.log("July");
+            break;
+        case month = 8:
+            console.log("August");
+            break;    
+        case month = 9:
+            console.log("September");
+            break;   
+        case month = 10:
+            console.log("October");
+            break;    
+        case month = 11:
+            console.log("November");
+            break;    
+        case month = 12:
+            console.log("December");
+            break;    
+    }
+}
+toMonth(2);
+
+// 11. Viết hàm nhập vào điểm số. In ra phân loại điểm số của học sinh: giỏi (>= 8), khá (>=
+//     6.5 và < 8), trung bình (>= 5 và < 6.5), yếu (< 5).
+
+function toClassify(score) {
+    if (score >= 8) {
+        console.log("Giỏi");
+    } else if (score >= 6.5 && score < 8) {
+        console.log("Khá");
+    } else if (score >= 5 && score < 6.5) {
+        console.log("Trung Bình");
+    } else if (score < 5) {
+        console.log("Yếu");
+    }
+}
+toClassify(5);
+
+// 12. Viết hàm có một tham số là nhiệt độ, in ra nhiệt độ và thông báo trạng thái thời tiết: nóng
+// (>= 30 độ C), mát (< 30 độ C và >= 20 độ C), lạnh (< 20 độ C)
+
+
+function degreeInfo(degree){
+    if(degree >= 30){
+        console.log("Nóng")
+    }
+    else if(degree >=20 && degree < 30){
+        console.log("Mát")
+    }
+    else if(degree<20){
+        console.log("Lạnh")
+    }
+}
+degreeInfo(29);
