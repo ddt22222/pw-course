@@ -9,8 +9,6 @@
 // ○ BMI < 30: Thừa cân
 // ○ BMI >= 30: Béo phì
 
-const { DESTRUCTION } = require("dns");
-
 const height = 1.75;
 const weight = 90;
 
@@ -19,20 +17,20 @@ function BMI(){
     console.log(BMI);
 
     if(BMI < 18.5){
-        console.log("Thieu can")
+        console.log("Thieu can");
         return;
     }
     
     if(18.5 < BMI < 25){
-        console.log("Binh thuong")
+        console.log("Binh thuong");
         return;
     }
     if(25 < BMI < 30){
-        console.log("Thua can")
+        console.log("Thua can");
         return;
     }
     if(BMI >= 30){
-        console.log("Beo phi")
+        console.log("Beo phi");
         return;
     }
 }
@@ -53,7 +51,7 @@ function celciusToFahrenheit() {
     const celsiusToFahrenheit = celsius*9/5 +32;
     const fahrenheitToCelsius = (fahrenheit-32)*5/9;
     console.log(`Độ F là :${celsiusToFahrenheit}`);
-    console.log(`Độ C là :${fahrenheitToCelsius}`)
+    console.log(`Độ C là :${fahrenheitToCelsius}`);
 }
 celciusToFahrenheit();
 
@@ -63,11 +61,11 @@ celciusToFahrenheit();
 
 const array = [2,3,5,6,1,2,-2,3]    
 function SumArray(){
-    let sum = 0
+    let sum = 0;
     for(let i of array){
         sum += i ;
     }
-    return console.log(`Tổng là ${sum}`)    
+    return console.log(`Tổng là ${sum}`) ;
 }
 SumArray();
 
@@ -92,7 +90,7 @@ function isPrime(){
         }
     }
         if(isPrimeNumber){
-            prime[i] =  "so nguyen to"
+            prime[i] =  "so nguyen to";
         }
     }
     console.log(prime);
@@ -200,8 +198,8 @@ checkPrice();
 // 8. Viết hàm có một tham số là giờ, in ra cửa hàng còn mở cửa hay không. Biết cửa hàng
 // mở cửa từ 9 giờ sáng đến 9 giờ tối.
 
-const AM = 9
-const PM = 21
+const AM = 9;
+const PM = 21;
 
 function checkOpen(now) {
     if(now >= AM && now < PM){
@@ -216,15 +214,15 @@ checkOpen(20);
 
 function ticketInfo(age){
     if(age <= 5 ){
-        console.log("Miễn phí")
+        console.log("Miễn phí");
         return;
     }
     if(age >= 18){
-        console.log("Giá vé là 100k")
+        console.log("Giá vé là 100k");
         return;
     } 
     if(age >= 6 && age < 18){
-        console.log("Giá vé là 50k")
+        console.log("Giá vé là 50k");
         return;
     }
 }
@@ -297,13 +295,13 @@ toClassify(5);
 
 function degreeInfo(degree){
     if(degree >= 30){
-        console.log("Nóng")
+        console.log("Nóng");
     }
     else if(degree >=20 && degree < 30){
-        console.log("Mát")
+        console.log("Mát");
     }
     else if(degree<20){
-        console.log("Lạnh")
+        console.log("Lạnh");
     }
 }
 degreeInfo(29);

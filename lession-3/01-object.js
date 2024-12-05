@@ -20,7 +20,7 @@
             country: "VN"
         }
     }
-    console.log(person.address.street)
+    console.log(person.address.street);
 // 3. Tạo một object student và truy cập đến điểm môn toán (math) sử dụng ngoặc vuông.
 // Biết object student bao gồm 2 thuộc tính: name và grades. Trong đó grades là một
 // object với 2 thuộc tính kiểu number: math và english
@@ -31,7 +31,7 @@
             english: 9
         }
     }
-    console.log(student.grades.math)
+    console.log(student.grades.math);
 
 // 4. Tạo một object product với các thuộc tính là tên các sản phẩm và giá trị là giá
 // của chúng. Dùng vòng lặp for...in để in ra tên và giá của mỗi sản phẩm.
@@ -66,7 +66,7 @@
 
      bike.color = "white"
 
-    console.log(bike)
+    console.log(bike);
 
 // 7. Tạo một object employee với các thuộc tính: name, age và xóa thuộc tính age khỏi
 // object này
@@ -74,9 +74,9 @@
         name: "Duc",
         age: "31"
     }
-    delete employee.age
+    delete employee.age;
 
-    console.log(employee)
+    console.log(employee);
 
 
 
@@ -99,7 +99,7 @@
     classB: classB
    }
 
-   console.log(school)
+   console.log(school);
 
 
 
