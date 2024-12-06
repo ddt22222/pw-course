@@ -62,7 +62,7 @@ let revenue = [
   { month: 11, total: -100 },
   { month: 12, total: 700 },
 ];
-sum = 0;
+let sum = 0;
 for (let i in revenue) {
   sum += revenue[i].total;
 }
