@@ -21,11 +21,7 @@ for (let i = a; i <= 9; i++) {
 let isOdd = [];
 
 for (let i = 1; i <= 99; i++) {
-  if (i == 1) {
-    isOdd.push(i);
-    continue;
-  }
-  if (i !== 1 && i % 2 == 1) {
+  if (i % 2 !==0) {
     isOdd.push(i);
     continue;
   }

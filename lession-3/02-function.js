@@ -9,8 +9,8 @@
 // ○ BMI < 30: Thừa cân
 // ○ BMI >= 30: Béo phì
 
-const height = 1.75;
-const weight = 90;
+const height = 1.8;
+const weight = 75;
 
 function BMI() {
   const BMI = weight / (height * height);
@@ -21,11 +21,11 @@ function BMI() {
     return;
   }
 
-  if (18.5 < BMI < 25) {
+  if (BMI > 18.5 && BMI <= 25) {
     console.log("Binh thuong");
     return;
   }
-  if (25 < BMI < 30) {
+  if (BMI > 25 && BMI < 30) {
     console.log("Thua can");
     return;
   }
@@ -43,16 +43,18 @@ BMI();
 // ○ Từ độ C sang độ F: độ F = (độ C) * 9/5 + 32;
 // ○ Từ độ F sang độ C: (độ F - 32) * 5 / 9;
 
-const celsius = 36;
-const fahrenheit = 97;
 
-function celciusToFahrenheit() {
-  const celsiusToFahrenheit = (celsius * 9) / 5 + 32;
-  const fahrenheitToCelsius = ((fahrenheit - 32) * 5) / 9;
-  console.log(`Độ F là :${celsiusToFahrenheit}`);
-  console.log(`Độ C là :${fahrenheitToCelsius}`);
+
+function celciusToFahrenheit(number, category) {
+  const F = (number * 9) / 5 + 32;
+  const C = ((number - 32) * 5) / 9;
+  if (category === "F") {
+    console.log(`Độ C là : ${C}`);
+  } else if (category === "C") {
+    console.log(`Độ F là : ${F}`);
+  }
 }
-celciusToFahrenheit();
+celciusToFahrenheit(36, "F");
 
 // 3. Khai báo một mảng các phần tử bất kì. Viết một hàm để tính tổng của các phần tử trong
 // một mảng số.
@@ -63,7 +65,7 @@ function SumArray() {
   for (let i of array) {
     sum += i;
   }
-  return console.log(`Tổng là ${sum}`);
+  console.log(`Tổng là ${sum}`);
 }
 SumArray();
 
@@ -161,7 +163,7 @@ let studentScore = [
 ];
 
 function scoreAvg() {
-  sumScore = 0;
+  let sumScore = 0;
   for (let i in studentScore) {
     sumScore += studentScore[i].score;
   }
@@ -265,9 +267,11 @@ function toMonth(month) {
     case (month = 12):
       console.log("December");
       break;
+    default: 
+      console.log("Nhâp giá trị từ 1 đến 12")
   }
 }
-toMonth(2);
+toMonth(0);
 
 // 11. Viết hàm nhập vào điểm số. In ra phân loại điểm số của học sinh: giỏi (>= 8), khá (>=
 //     6.5 và < 8), trung bình (>= 5 và < 6.5), yếu (< 5).
@@ -293,7 +297,7 @@ function degreeInfo(degree) {
     console.log("Nóng");
   } else if (degree >= 20 && degree < 30) {
     console.log("Mát");
-  } else if (degree < 20) {
+  } else {
     console.log("Lạnh");
   }
 }
