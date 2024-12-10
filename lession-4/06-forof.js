@@ -72,19 +72,19 @@ let count = {};
 let newArray2 = [];
 
 // Đếm số lần xuất hiện của từng phần tử
-array2.forEach(value => {
+for (let value of array2) {
     count[value] = (count[value] || 0) + 1;
-});
-console.log(count)
+}
+console.log(count); // { '1': 3, '2': 2, '3': 1, '4': 1, '5': 1 }
 
 // Thêm các phần tử không bị trùng lặp vào mảng mới
-array2.forEach(value => {
+for (let value of array2) {
     if (count[value] === 1) {
         newArray2.push(value);
     }
-});
+}
 
-console.log(newArray2); // Kết quả: [3, 4, 5]
+console.log(newArray2); // Kết quả: [3, 4, 5] // Kết quả: [3, 4, 5]
 
 // for (let check of array2) {
 //     let isDuplicate = false;
