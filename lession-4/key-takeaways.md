@@ -29,10 +29,13 @@ Cách khai báo
 switch (biến){
     case = 1: 
         console.log("Đây là số một");
+        break;
     case =2: 
         console.log("Đây là số hai");
+        break;
     default: 
-         console.log("Đây là trường hợp còn lại");
+        console.log("Đây là trường hợp còn lại");
+        break;
 }
 
 

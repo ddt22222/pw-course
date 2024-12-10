@@ -7,7 +7,7 @@ array.forEach(number => console.log(number));
 // Tính tổng, tìm giá trị lớn nhất và nhỏ nhất trong một mảng. Ví dụ mảng [1, 2,
 //     3] thì tổng sẽ là 6 (1+2+3) và giá trị lớn nhất là 3
 
-let array2 = [1, 2, 4, 1, 2, 3, 5, 1];
+let array2 = [1, 2, 4, 1, 6, 3, 5, 1];
 
 let max = array2[0]; // Giả sử phần tử đầu tiên là lớn nhất
 let min = array2[0];  // Giả sử phần tử đầu tiên là lớn nhất
