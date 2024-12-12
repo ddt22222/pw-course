@@ -8,7 +8,7 @@ Biến trong scope{}: biến có giá trị sử dụng trong 1 function, 1 vòn
 ## Câu điều kiện
 If- else : 
 if- else if -else
-
+```
 Cách khai báo:
 if(condition){
     coding                // chạy đoạn code này nếu condition=true
@@ -19,7 +19,7 @@ else if(condition2){
 else{
     coding3                      // chạy đoạn code này nếu condition2=false và condition =false
 }
-
+```
 
 ## switch case / default
 Tương đối giống với if tuy nhiên switch case dễ dàng cho ta chia nhánh các trường hợp chỉ xét riêng giá trị. Ví dụ tháng 1 -> january, tháng 2 ->feburary . Các case phức tạp như > < hoặc nhiều điều kiện kết hợp không dùng switch case.
