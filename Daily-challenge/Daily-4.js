@@ -534,3 +534,30 @@ let falseArray = [NaN, 0, 15, false, -22, '', undefined, 47, null];
 let trueArray = falseArray.filter(value => typeof value === 'number' && value !== 0 && !isNaN(value));
 
 console.log(trueArray);
+
+// 25. Sort Objects by Title
+
+// Write a JavaScript function to sort the following array of objects by title value.
+// Sample object :
+
+let library = [ 
+   { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+   { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+   { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
+   ];
+
+   library.sort((a, b) => {
+    return a.title.localeCompare(b.title);
+ });
+ 
+ console.log(library);
+
+//  26. Find Pair with Target Sum
+
+// Write a JavaScript program to find a pair of elements (indices of the two numbers) in a given array whose sum equals a specific target number.
+
+// Input: numbers= [10,20,10,40,50,60,70], target=50
+
+function findNumber(array,target){
+    
+}

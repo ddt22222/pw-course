@@ -100,3 +100,35 @@ console.log(newArray2); // Kết quả: [3, 4, 5] // Kết quả: [3, 4, 5]
 // }
 
 // console.log(newArray2);
+
+let arr = [1, 2, 3];
+arr[10] = 99;
+console.log(arr.length);
+
+let text = "JavaScript";
+for (let letter of text) {
+    console.log(letter);
+}
+
+let a= "10";
+let b= 20;
+console.log(a+b);
+
+console.log(!!false);
+
+let x = 5; 
+
+if (x < 3) { 
+  console.log("A"); 
+} else if (x < 7) { 
+  console.log("B"); 
+} else { 
+  console.log("C"); 
+}
+
+for (let i = 0; i < 5; i++) { 
+    if (i === 3) { 
+         break; 
+   } 
+    console.log(i); 
+  }
