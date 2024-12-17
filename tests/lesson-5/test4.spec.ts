@@ -11,7 +11,7 @@ test('Tạo Note', async ({ page }) => {
     let pageTitles: string[] = [];
 
     for (let i = 1; i <= 10; i++) {
-        let vnexpressTitle;
+        let vnexpressTitle: any;
         if (i == 1){
         vnexpressTitle = `//h3/a[@data-medium="Item-${i}"]`; // Lấy Xpath thằng đầu tiên của Vnexpress để trong h3
         }

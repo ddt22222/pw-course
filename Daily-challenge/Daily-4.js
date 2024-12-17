@@ -559,5 +559,11 @@ let library = [
 // Input: numbers= [10,20,10,40,50,60,70], target=50
 
 function findNumber(array,target){
-    
+    for(let i of array){
+        for (let j=0; j < array.length;j++){
+            if(i === array[j]){
+                continue;
+            }
+        }
+    }
 }
