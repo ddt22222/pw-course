@@ -3,8 +3,6 @@ import { test } from '@playwright/test';
 let inputText = '//div/input[@type="text"]';
 let addTask = '//div/button[@id="add-task"]';
 
-
-
 test('Tạo và xóa ToDo với Dialog', async ({ page }) => {
     // Mở trang web
     await page.goto('https://material.playwrightvn.com/03-xpath-todo-list.html');
