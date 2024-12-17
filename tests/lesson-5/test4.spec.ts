@@ -35,7 +35,7 @@ test('Tạo Note', async ({ page }) => {
         await page.locator(addButton).click();
     }
 
-    await page.locator(searchArea).fill ('Rồng đất');
+    await page.locator(searchArea).fill (`${pageTitles[0]}`);
 });
 //  test('Tạo Note', async ({ page }) => {
 //     await page.goto('https://material.playwrightvn.com/04-xpath-personal-notes.html');
