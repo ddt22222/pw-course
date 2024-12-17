@@ -13,13 +13,13 @@ test('Tạo Note', async ({ page }) => {
     for (let i = 1; i <= 10; i++) {
         let vnexpressTitle;
         if (i == 1){
-        vnexpressTitle = `//h3/a[@data-medium="Item-${i}"]`;
+        vnexpressTitle = `//h3/a[@data-medium="Item-${i}"]`; // Lấy Xpath thằng đầu tiên của Vnexpress để trong h3
         }
         else if(i>=2 && i<=4){
-        vnexpressTitle = `//h4/a[@data-medium="Item-${i}"]`;
+        vnexpressTitle = `//h4/a[@data-medium="Item-${i}"]`;// thằng 2~4 nó lại để ở h4
         }
         else if(i>=5){
-        vnexpressTitle = `//h3/a[@data-medium="Item-${i}"]`;
+        vnexpressTitle = `//h3/a[@data-medium="Item-${i}"]`;// Xong thằng 5 trở đi nó lại để ở h3....
         }
         // Chờ phần tử xuất hiện trước khi lấy nội dung
         let pageTitle = await page.locator(vnexpressTitle).innerText();
