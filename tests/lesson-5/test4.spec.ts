@@ -1,4 +1,5 @@
 import { test } from '@playwright/test';
+import * as ExcelJS from 'exceljs';
 
 let addText ='//div/input[@id="note-title"]';
 let addContent ='//div/textarea[@id="note-content"]';
@@ -28,15 +29,24 @@ test('Tạo Note', async ({ page }) => {
         pageTitles.push(pageTitle);
     }
 
-    await page.goto('https://material.playwrightvn.com/04-xpath-personal-notes.html');
-    
-    for (let i=0; i<10; i++){
-        await page.locator(addText).fill(`${pageTitles[i]}`);
-        await page.locator(addContent).fill(`Nội dung ${i}`);
-        await page.locator(addButton).click();
-    }
+    const workbook = new ExcelJS.Workbook();
+    const sheet = workbook.addWorksheet('VnExpress Titles');
 
-    await page.locator(searchArea).fill (`${pageTitles[0]}`);
+    // Ghi dữ liệu vào sheet
+    sheet.columns = [
+        { header: 'STT', key: 'stt', width: 10 },
+        { header: 'Tiêu đề', key: 'title', width: 100 },
+    ];
+
+    pageTitles.forEach((title, index) => {
+        sheet.addRow({ stt: index + 1, title: title });
+    });
+
+    // Lưu file Excel
+    const filePath = './vnexpress_titles.xlsx';
+    await workbook.xlsx.writeFile(filePath);
+
+    console.log(`Dữ liệu đã được lưu vào file Excel tại: ${filePath}`);
 });
 //  test('Tạo Note', async ({ page }) => {
 //     await page.goto('https://material.playwrightvn.com/04-xpath-personal-notes.html');

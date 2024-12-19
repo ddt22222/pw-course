@@ -5,3 +5,7 @@ node_modules/
 /playwright/.cache/
 
 /API-test/
+
+tests/lesson-5/daily.spec.ts
+
+Daily-challenge/Daily-4.js/
