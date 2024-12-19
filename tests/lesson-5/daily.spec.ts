@@ -92,13 +92,10 @@ function caesarCipher(message: string[], shift: number) {
                 // Kiểm tra với chữ hoa
                 let newIndex = (alphabetArray.indexOf(i.toUpperCase()) + shift) % 26;
                 transformedContent += alphabetArray[newIndex];
-            } else if (alphabetLowerCase.includes(i.toLowerCase())) {
+            }else if (alphabetLowerCase.includes(i.toLowerCase())) {
                 // Kiểm tra với chữ thường
                 let newIndex = (alphabetLowerCase.indexOf(i.toLowerCase()) + shift) % 26;
                 transformedContent += alphabetLowerCase[newIndex];
-            } else {
-                // Giữ nguyên các ký tự không phải chữ cái
-                transformedContent += i;
             }
         }
         
@@ -109,4 +106,4 @@ function caesarCipher(message: string[], shift: number) {
 }
 
 // Ví dụ chạy thử
-console.log(caesarCipher(["egghee", "zxcsggG"], 3)); // Output: ["KHhh", "CUjjJ"]
+console.log(caesarCipher(["Hgghee", "zxcsggG"], 4)); 
