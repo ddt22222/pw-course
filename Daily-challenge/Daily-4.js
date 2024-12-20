@@ -870,55 +870,28 @@
 // [["a","b"],[1,2],[true,false]]
 // [["a","b"],[1,2],[true]]
 
-//Cach 1
-// function unzip(array1, array2) {
-//     let arrayString = [];
-//     let arrayNumber = [];
-//     let arrayBool = [];
 
-//     // Duyệt qua cả hai mảng array1 và array2
-//     for (let i = 0; i < array1.length; i++) {
-//         // Kiểm tra kiểu dữ liệu của phần tử trong array1
-//         if (typeof array1[i] === 'string') {
-//             arrayString.push(array1[i]);
-//         } else if (typeof array1[i] === 'number') {
-//             arrayNumber.push(array1[i]);
-//         } else if (typeof array1[i] === 'boolean') {
-//             arrayBool.push(array1[i]);
-//         }
-        
-//         // Kiểm tra kiểu dữ liệu của phần tử trong array2
-//         if (typeof array2[i] === 'string') {
-//             arrayString.push(array2[i]);
-//         } else if (typeof array2[i] === 'number') {
-//             arrayNumber.push(array2[i]);
-//         } else if (typeof array2[i] === 'boolean') {
-//             arrayBool.push(array2[i]);
-//         }
-//     }
 
-//     // Trả về kết quả
-//     return [arrayString, arrayNumber, arrayBool];
-// }
 
-// // Sử dụng
-// const array1 = ['a', 1, true];
-// const array2 = ['b', 2, false];
 
-// console.log(unzip(array1, array2));
-// // Kết quả: [['a', 'b'], [1, 2], [true, false]]
 
-//Cach 2
 
-function unzip(array1,array2){
-    combinedArray = array1.concat(array2);
-    return [
-        combinedArray.filter(string => typeof string === 'string'),
-        combinedArray.filter(number => typeof number === 'number'),
-        combinedArray.filter(boolean => typeof boolean === 'boolean')
-    ]
-}
-const array1 = ['a', 1, true];
-const array2 = ['b', 2, false];
 
-console.log(unzip(array1, array2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
