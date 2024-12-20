@@ -871,6 +871,170 @@
 // [["a","b"],[1,2],[true]]
 
 
+// console.log(thirdSmallest([1, 2, 3, 5, 7]));
+
+
+// 50. Sum Numbers in Mixed Array
+
+// Write a JavaScript program that takes an array with mixed data type and calculates the sum of all numbers.
+
+// Test Data :
+// ([2, "11", 3, "a2", false, 5, 7, 1]) -> 18
+// ([2, 3, 0, 5, 7, 8, true, false]) -> 25
+// Expected Output:
+// Original array: 2,11,3,a2,false,5,7,1
+// Sum all numbers of the said array: 18
+// Original array: 2,3,0,5,7,8,true,false
+// Sum all numbers of the said array: 25
+
+// function calMixedData(arr){
+//     let sum = 0;
+//     let newArr = arr.filter( x=> typeof x === 'number');
+//     newArr.forEach(x => sum += x);
+//     return sum;
+// }
+// console.log(calMixedData([2, 3, 0, 5, 7, 8, true, false]) ) ;
+
+
+// 51. Check Factor Chain
+
+// Write a JavaScript program to check if an array is a factor chain or not.
+
+// A factor chain is an array in which the previous element is a factor of the next consecutive element. The following is a factor chain:
+// [2, 4, 8, 16, 32]
+// // 2 is a factor of 4
+// // 4 is a factor of 8
+// // 8 is a factor of 16
+// // 16 is a factor of 32
+
+
+// Test Data :
+// ([2, 4, 8, 16, 32]) -> true
+// ([2, 4, 16, 32, 64]) -> true
+// ([2, 4, 16, 32, 68]) -> false
+// Expected Output:
+// Original array:
+// Check the said array is a factor chain or not?
+// true
+// Original array:
+// Check the said array is a factor chain or not?
+// true
+// Original array:
+// Check the said array is a factor chain or not?
+// false
+
+// function checkFactor(arr){
+//     for (let i = arr.length-1 ; i>= 0; i++){
+//         if(i == arr.length-1){
+//             continue;
+//         }
+//         else{
+//             let x = arr[i];
+//             if (arr[i+1] % x !== 0){
+//                 return false;
+//             }
+//         }
+//     }
+//     return true;
+// }
+// console.log(checkFactor([2, 4, 16, 32, 64]));
+
+
+// function checkFactor(arr) {
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] % arr[i - 1] !== 0) { // Kiểm tra nếu phần tử trước không phải ước của phần tử hiện tại
+//             return false;
+//         }
+//     }
+//     return true; // Nếu tất cả phần tử đều đúng
+// }
+
+// console.log(checkFactor([2, 4, 16, 32, 65]));
+
+// 52. Find NaN Indexes in Array
+
+// Write a JavaScript program to get all the indexes where NaN is found in a given array of numbers and NaN.
+
+// Test Data :
+// ([2, NaN, 8, 16, 32]) -> [1]
+// ([2, 4, NaN, 16, 32, NaN]) -> [2,5]
+// ([2, 4, 16, 32]) ->[]
+// Expected Output:
+// Original array: 2,NaN,8,16,32
+// Find all indexes of NaN of the said array: 1
+// Original array: 2,4,NaN,16,32,NaN
+// Find all indexes of NaN of the said array: 2,5
+// Original array: 2,4,16,32
+// Find all indexes of NaN of the said array:
+
+// function checkNan(arr){
+//     let newArr=[];
+//     arr.forEach((element,index) => {
+//         if(Number.isNaN(element)){
+//             newArr.push(index);
+//         } 
+//     }
+// ); 
+// return newArr;
+// }
+// console.log(checkNan([2, NaN, 8, NaN, 32]));
+
+
+// 53. Count Arrays Inside Array
+
+// Write a JavaScript program to count the number of arrays inside a given array.
+
+// Test Data :
+// ([2,8,[6],3,3,5,3,4,[5,4]]) -> 2
+// ([2,8,[6,3,3],[4],5,[3,4,[5,4]]]) -> 3
+// Expected Output:
+// Number of arrays inside the said array: 2
+// Number of arrays inside the said array: 3
+
+// function countArray(arr){
+//     count =0;
+//     for (let i of arr){
+//         if (Array.isArray(i)){
+//             count+=1;
+//         }
+//     }
+//     return count;
+// }
+// console.log(countArray([2,8,[6,3,3],[4],5,[3,4,[5,4]]]))
+
+
+//////////////////////////////////////////Recursion///////////////////////////////////////////////
+// 1. Factorial Calculation
+
+// Write a JavaScript program to calculate the factorial of a number.  
+// In mathematics, the factorial of a non-negative integer n, denoted by n!, 
+// is the product of all positive integers less than or equal to n. 
+// For example, 5! = 5 x 4 x 3 x 2 x 1 = 120s
+
+// function factorialNum(n){
+//     if (n === 0) {
+//         return 1;
+//       }
+//     return n*factorialNum(n-1);
+// }
+// console.log(factorialNum(5));
+
+// 2. GCD Using Recursion
+
+// Write a JavaScript program to find the greatest common divisor (GCD) of two positive numbers using recursion
+
+
+
+function findGreatestCommonDivisor(num1,num2){
+    let commonNum1=[];
+    let commonNum2=[];
+    for (let i=1; i <= Math.sqrt(num1);i++){
+        if(num1 % i == 0){
+
+        }
+    }
+}
+
 
 
 
