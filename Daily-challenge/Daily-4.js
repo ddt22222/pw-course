@@ -870,217 +870,6 @@
 // [["a","b"],[1,2],[true,false]]
 // [["a","b"],[1,2],[true]]
 
-// 44. Object from Array with Key
-
-// Write a JavaScript function to create an object from an array, using the specified key and excluding it from each value.
-
-// Test Data :
-// indexOn([ { id: 10, name: 'apple' }, { id: 20, name: 'orange' } ], x => x.id)
-// Expected Output:
-// {"1":{"name":Alce,"age":"25"}}
-
-
-//Cach 1
-// const data = [
-//     { id: 1, name: 'Alice', age: 25 },
-//     { id: 2, name: 'Bob', age: 30 },
-//     { id: 3, name: 'Charlie', age: 35 }
-//   ];
-  
-  
-//   function indexOn(objectArrays){
-//     let newObject ={};
-//     for (let i =0; i < objectArrays.length; i++){
-//         newObject[objectArrays[i].id] = {
-//             "name": objectArrays[i].name,
-//             "age": objectArrays[i].age
-//         };             
-// }
-//     return newObject;
-//   }
-
-//   console.log(indexOn(data));
-
-//Cach 2
-// const data = [
-//     { id: 1, name: 'Alice', age: 25 },
-//     { id: 2, name: 'Bob', age: 30 },
-//     { id: 3, name: 'Charlie', age: 35 }
-//   ];
-  
-//   function indexOn(objectArrays) {
-//     return objectArrays.reduce((acc, curr) => {
-//       acc[curr.id] = { name: curr.name, age: curr.age };
-//       return acc;
-//     }, {});
-//   }
-  
-//   console.log(indexOn(data));
-
-// 45. Unique Values in Array
-
-// Write a JavaScript program to find all the unique values in a set of numbers.
-
-// Test Data :
-// [1, 2, 2, 3, 4, 4, 5]
-// [1, 2, 3, 4, 5]
-// [1, -2, -2, 3, 4, -5, -6, -5]
-// Expected Output:
-// [1,2,3,4,5]
-// [1,2,3,4,5]
-// [1,-2,3,4,-5,-6,-5,4]
-
-// function uniqueFromEach(...arrays) {
-//     return arrays.map(arr => [...new Set(arr)]); // Loại bỏ trùng lặp nhưng vẫn giữ thứ tự
-// }
-
-// console.log(uniqueFromEach([1, 2, 2, 3], [3, 4, 4, 5], [5, 6, 6, 7]));
-
-// 46. Permutations of Array Elements
-
-// Write a JavaScript program to generate all permutations of an array's elements (including duplicates).
-
-// Test Data :
-// [1, 33, 5]
-// [1, 3, 5, 7]
-// [2, 4]
-// Expected Output:
-// [[1,33,5],[1,5,33],[33,1,5],[33,5,1],[5,1,33],[5,33,1]]
-// [[1,3,5,7],[1,3,7,5],[1,5,3,7],[1,5,7,3],[1,7,3,5],[1,7,5,3],[3,1,5,7],[3,1,7,5],[3,5,1,7],[3,5,7,1],[3,7,1,5],[3,7,5,1],[5,1,3,7],[5,1,7,3],[5,3,1,7],[5,3,7,1],[5,7,1,3],[5,7,3,1],[7,1,3,5],[7,1,5,3],[7,3,1,5],[7,3,5,1],[7,5,1,3],[7,5,3,1]]
-// [[2,4],[4,2]]
-
-
-// function permute(arr) {
-//     let result = [];
-
-//     // Trường hợp cơ bản, nếu mảng chỉ có một phần tử thì trả về chính nó
-//     if (arr.length === 1) {
-//         return [arr];
-//     }
-
-//     // Duyệt qua tất cả các phần tử trong mảng
-//     for (let i = 0; i < arr.length; i++) {
-//         // Tạo một mảng con không chứa phần tử arr[i]
-//         let remainingArr = arr.slice(0, i).concat(arr.slice(i + 1));
-
-//         // Gọi đệ quy để lấy các hoán vị của mảng còn lại
-//         let remainingPerms = permute(remainingArr);
-
-//         // Thêm phần tử arr[i] vào mỗi hoán vị của mảng còn lại
-//         for (let perm of remainingPerms) {
-//             result.push([arr[i], ...perm]);
-//         }
-//     }
-
-//     return result;
-// }
-
-// let arr = [1, 2, 3,4];
-
-// 47. Remove Falsey from Object or Array
-
-// Write a JavaScript program to remove all false values from an object or array.
-
-// Test Data :
-
-// Expected Output:
-// {"c":true,"e":1,"g":"a","h":[true,1,"a"],"i":{"l":"a"}}
-// }
-
-// const obj = {
-//     a: null,
-//     b: false,
-//     c: true,
-//     d: 0,
-//     e: 1,
-//     f: '',
-//     g: 'a',
-//     h: [null, false, '', true, 1, 'a'],
-//     i: { j: 0, k: false, l: 'a' }
-// };
-
-// function removeFalse(obj) {
-//     let newObj = {};
-//     for (let [key, value] of Object.entries(obj)) {
-//         // Kiểm tra nếu giá trị là mảng hoặc đối tượng thì xử lý tiếp
-//         if (Array.isArray(value)) {
-//             // Lọc phần tử trong mảng
-//             value = value.filter(item => item !== false && item !== null && item !== '');
-//         } else if (typeof value === 'object' && value !== null) {
-//             // Đệ quy để xử lý đối tượng con
-//             value = removeFalse(value);
-//         }
-
-//         // Kiểm tra nếu value không phải là false, null hoặc '' thì thêm vào newObj
-//         if (value !== false && value !== null && value !== '' && value !==0) {
-//             newObj[key] = value;
-//         }
-//     }
-//     return newObj;
-// }
-
-// console.log(removeFalse(obj));
-
-// 48. Check All Numbers Prime
-
-// Write a JavaScript program that takes an array of integers and returns false if every number is not prime. Otherwise, return true.
-
-// Test Data :
-// ([2,3,5,7]) -> true
-// ([2,3,5,7,8]) -> false
-// Expected Output:
-// Original array of integers: 2,3,5,7
-// In the said array check every numbers are prime or not! true
-// Original array of integers: 2,3,5,7,8
-// In the said array check every numbers are prime or not! false
-
-// function checkPrime(number){
-//     if(number <= 1){
-//         return false;
-//     }
-//     else if (number>1){
-//         for (i = 2; i <= Math.sqrt(number); i++){
-//             if(number % i ===0){
-//                 return false;
-//             }
-//         }
-//         return true;
-//     }   
-// }
-
-// function checkPrimeArray(arr){
-//     for (let i of arr){
-//         if (checkPrime(i)== false){
-//             return false;
-//         }
-//     }
-//     return true;
-// }
-
-// console.log(checkPrimeArray([2,3,5,7]) );
-
-
-// 49. Find Third Smallest Number
-
-// Write a JavaScript program that takes an array of numbers and returns the third smallest number.
-
-// Test Data :
-// (2,3,5,7,1) -> 3
-// (2,3,0,5,7,8,-2,-4) -> 0
-// Expected Output:
-// Original array of numbers: 2,3,5,7,1
-// Third smallest number of the said array of numbers: 3
-// Original array of numbers: 2,3,0,5,7,8,-2,-4
-// Third smallest number of the said array of numbers: 0
-
-// function sortedArr(arr){    
-//     return arr.sort((a,b)=>a-b);
-// }
-
-// function thirdSmallest(arr){
-//     const sorted = sortedArr(arr);
-//     return sorted[2];
-// }
 
 // console.log(thirdSmallest([1, 2, 3, 5, 7]));
 
@@ -1244,3 +1033,28 @@ function findGreatestCommonDivisor(num1,num2){
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
