@@ -1241,7 +1241,6 @@ function findGreatestCommonDivisor(num1,num2){
     let commonNum2=[];
     for (let i=1; i <= Math.sqrt(num1);i++){
         if(num1 % i == 0){
-
         }
     }
 }
