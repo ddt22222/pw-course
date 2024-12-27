@@ -89,6 +89,15 @@ class Order {
     getTotal(): number {
         return this.items.reduce((sum, item) => sum + item.getTotal(), 0);
     }
+
+    checkout(): void {
+        if (this.items.length > 0) {
+            this.status = "Completed";
+            console.log("Đơn hàng đã hoàn tất.");
+        } else {
+            console.log("Không có sản phẩm trong giỏ hàng để thanh toán.");
+        }
+    }
 }
 
 
@@ -106,3 +115,28 @@ class Order {
 // Viết hàm kiểm tra trong Store để tìm sản phẩm theo id.
 // Viết thêm hàm hủy đơn hàng (cancelOrder()) trong lớp Order.
 // Hiển thị danh sách sản phẩm còn lại sau mỗi đơn hàng.
+
+class Store {
+    products: Product[];
+    orders: Order[];
+
+    addProduct(product: Product){
+        this.products.push(product);
+    }
+
+    createOrder(order: Order){
+        this.orders.push(order);
+    }
+
+    listOrder(): void {
+        // Duyệt qua mảng products và gọi getInfo() cho từng sản phẩm
+        this.products.forEach(product => {
+            console.log(product.getInfo()); // Gọi getInfo() cho từng sản phẩm
+        });
+    }
+}
+
+
+
+
+
