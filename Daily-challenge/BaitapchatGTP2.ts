@@ -1,49 +1,30 @@
-// /////////////////////Đề bài: Xây dựng hệ thống quản lý đơn hàng//////////////////////
-
-
-// Hãy xây dựng một hệ thống quản lý đơn hàng cho một cửa hàng trực tuyến. Hệ thống cần có các lớp sau:
-
-// 1. Lớp Product
-// Thuộc tính:
-// id: Mã sản phẩm (kiểu number)
-// name: Tên sản phẩm (kiểu string)
-// price: Giá sản phẩm (kiểu number)
-// quantity: Số lượng có sẵn (kiểu number)
-// Phương thức:
-// getInfo(): Trả về thông tin sản phẩm dạng chuỗi.
-// updateStock(quantity: number): Cập nhật số lượng sản phẩm trong kho.
-
 class Product {
     constructor(
         public id: number, 
-        public name:string, 
-        public price:number, 
-        public quantity:number
-    ){}
-    getInfo():void{
-        const info = `id: ${this.id}, name: ${this.name}, price: ${this.price}, quantity: ${this.quantity}`;
-        console.log(info);
+        public name: string, 
+        public price: number, 
+        public quantity: number
+    ) {}
+
+    getInfo(): string {
+        return `id: ${this.id}, name: ${this.name}, price: ${this.price}, quantity: ${this.quantity}`;
     }
-    updateStock(quantity: number){
+
+    updateStock(quantity: number) {
         this.quantity += quantity;
         console.log(`Trong kho hiện tại có ${this.quantity} sản phẩm`);
     }
 }
 
-// 2. Lớp OrderItem
-// Thuộc tính:
-// product: Sản phẩm (kiểu Product)
-// quantity: Số lượng sản phẩm trong đơn hàng (kiểu number)
-// Phương thức:
-// getTotal(): Trả về tổng tiền của sản phẩm trong đơn hàng.
-
 class OrderItem {
     product: Product;
     quantity: number;
+
     constructor(product: Product, quantity: number) {
         this.product = product;
         this.quantity = quantity;
     }
+
     getTotal(): number {
         if (this.quantity > this.product.quantity) {
             console.log(`Không đủ hàng trong kho cho sản phẩm ${this.product.name}`);
@@ -53,29 +34,20 @@ class OrderItem {
     }
 }
 
-// 3. Lớp Order
-// Thuộc tính:
-// id: Mã đơn hàng (kiểu number)
-// items: Mảng các sản phẩm trong đơn hàng (kiểu OrderItem[])
-// status: Trạng thái đơn hàng (kiểu string, các giá trị: "Pending", "Completed", "Cancelled")
-// Phương thức:
-// addItem(item: OrderItem): Thêm một sản phẩm vào đơn hàng.
-// removeItem(productId: number): Xóa sản phẩm khỏi đơn hàng dựa trên id.
-// getTotal(): Tính tổng tiền của toàn bộ đơn hàng.
-// checkout(): Đổi trạng thái đơn hàng thành "Completed".
-
 class Order {
     id: number;
-    items: OrderItem[]=[];
-    status: string;
+    items: OrderItem[] = [];
+    status: string = "Pending";
 
-    constructor(id: number){
+    constructor(id: number) {
         this.id = id;
     }
+
     addItem(item: OrderItem): void {
         this.items.push(item);
         console.log(`Đã thêm sản phẩm: ${item.product.name}, số lượng: ${item.quantity}`);
     }
+
     removeItem(productId: number): void {
         const index = this.items.findIndex(item => item.product.id === productId);
         if (index !== -1) {
@@ -98,45 +70,65 @@ class Order {
             console.log("Không có sản phẩm trong giỏ hàng để thanh toán.");
         }
     }
+
+    cancelOrder(): void {
+        this.status = "Cancelled";
+        console.log("Đơn hàng đã bị hủy.");
+    }
 }
 
-
-// 4. Lớp Store
-// Thuộc tính:
-// products: Danh sách sản phẩm có sẵn (kiểu Product[])
-// orders: Danh sách các đơn hàng (kiểu Order[])
-// Phương thức:
-// addProduct(product: Product): Thêm sản phẩm mới vào cửa hàng.
-// createOrder(order: Order): Tạo đơn hàng mới.
-// listOrders(): Hiển thị tất cả các đơn hàng.
-
-// Nhiệm vụ:
-// Cài đặt toàn bộ các lớp theo mô tả.
-// Viết hàm kiểm tra trong Store để tìm sản phẩm theo id.
-// Viết thêm hàm hủy đơn hàng (cancelOrder()) trong lớp Order.
-// Hiển thị danh sách sản phẩm còn lại sau mỗi đơn hàng.
-
 class Store {
-    products: Product[];
-    orders: Order[];
+    products: Product[] = [];
+    orders: Order[] = [];
 
-    addProduct(product: Product){
+    addProduct(product: Product): void {
         this.products.push(product);
     }
 
-    createOrder(order: Order){
+    createOrder(order: Order): void {
         this.orders.push(order);
     }
 
-    listOrder(): void {
-        // Duyệt qua mảng products và gọi getInfo() cho từng sản phẩm
-        this.products.forEach(product => {
-            console.log(product.getInfo()); // Gọi getInfo() cho từng sản phẩm
+    listOrders(): void {
+        this.orders.forEach(order => {
+            console.log(`Order ID: ${order.id}, Status: ${order.status}`);
+            order.items.forEach(item => {
+                console.log(`  Product: ${item.product.name}, Quantity: ${item.quantity}, Total: ${item.getTotal()}`);
+            });
         });
+    }
+
+    listProducts(): void {
+        this.products.forEach(product => {
+            console.log(product.getInfo());
+        });
+    }
+
+    findProductById(id: number): Product | undefined {
+        return this.products.find(product => product.id === id);
     }
 }
 
+// Tạo các sản phẩm và cửa hàng
+const product1 = new Product(1, "Áo", 123000, 3);
+const product2 = new Product(2, "Quần", 123000, 1);
 
+const nhapHang = new Store();
+nhapHang.addProduct(product1);
+nhapHang.addProduct(product2);
 
+// Kiểm tra danh sách sản phẩm
+console.log("Danh sách sản phẩm:");
+nhapHang.listProducts();
 
+// Tạo đơn hàng và thêm sản phẩm
+const order1 = new Order(1);
+order1.addItem(new OrderItem(product1, 2));
+order1.addItem(new OrderItem(product2, 1));
 
+// Tạo đơn hàng trong cửa hàng
+nhapHang.createOrder(order1);
+
+// Kiểm tra danh sách đơn hàng
+console.log("\nDanh sách đơn hàng:");
+nhapHang.listOrders();
